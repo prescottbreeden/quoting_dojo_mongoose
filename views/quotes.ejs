@@ -12,9 +12,14 @@
 </head>
 <body>
     <h1>Epic Quotes:</h1>
-    <% for(let i = 0; i < quotes.length; i++) { %>
-        <h4>Quote: <%= quotes[i].quote %></h4>
-        <p>By: <%= quotes[i].name %></p>
-    <% } %> 
+    <div class="quotes">
+        <% for(let i = 0; i < quotes.length; i++) { %>
+            <div class="quote">
+                <h4>Quote: "<%= quotes[i].quote %>"</h4>
+                <p>By: <%= quotes[i].name %></p>
+                <p>Created at: <%= quotes[i].createdAt %></p>
+            </div>
+                <% } %> 
+    </div>
 </body>
 </html>

@@ -3,7 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-var favicon = require('serve-favicon');
+const favicon = require('serve-favicon');
+const moment = require('moment');
+
 const app = express();
 
 // setup
