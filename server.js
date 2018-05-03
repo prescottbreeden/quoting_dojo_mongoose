@@ -39,16 +39,16 @@ app.get('/', function(req, res) {
 })
 
 app.get('/quotes', function(req, res) {
-    var all_quotes = Quote.find({}, function(err, quotes) {
+    Quote.find({}, function(err, quotes) {
         if(err)
         {
             console.log(err);
         }
         else 
         {
-            console.log(all_quotes[0]);
-            console.log(all_quotes[0].name);
-            console.log(all_quotes[0].quote);
+            console.log(quote[0]);
+            console.log(quote[0].name);
+            console.log(quote[0].quote);
         }
     })
 
@@ -72,5 +72,5 @@ app.post('/process', function(req, res) {
 })
 
 app.listen(8000, function() {
-    console.log("Power Overwhelming...")
+    console.log("Power Underwhelming...")
 })
