@@ -46,13 +46,9 @@ app.get('/quotes', function(req, res) {
         }
         else 
         {
-            console.log(quote[0]);
-            console.log(quote[0].name);
-            console.log(quote[0].quote);
+            res.render('quotes', {quotes: quotes});
         }
     })
-
-    res.render('quotes', {quotes: all_quotes});
 })
 
 app.post('/process', function(req, res) {
