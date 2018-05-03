@@ -11,6 +11,38 @@
     <link rel="shortcut icon" href="./images/favicon.ico" /> 
 </head>
 <body>
-    <h1>Welcome to quoting dojo</h1>
+    <div class="wrapper">
+        <div class="content">
+            <div class="row">
+                <h1>Welcome to quoting dojo</h1>
+            </div>
+            <form action="/process" method="POST" id="quote_form">
+                <div class="row">
+                    <div class="block">
+                        <h4>Your Name:</h4>
+                    </div>
+                    <div class="block">
+                        <input type="text" name="name" id="name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="block">
+                        <h4>Your Quote:</h4>
+                    </div>
+                    <div class="block">
+                        <textarea name="quote" id="quote" cols="20" rows="3"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="block">
+                    <button type="submit" form="quote_form" class="btn">Add my quote!</button>
+                </div>
+                <div class="block">
+                    <a href="/quotes"><button class="btn">Skip to quotes!</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

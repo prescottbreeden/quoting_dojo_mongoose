@@ -21,7 +21,7 @@ footer {
 .btn {
 	padding: 10px;
 	border-radius: 5px;
-	width: 80%;
+	width: 100%;
 	position: relative;
 	background-color:  rgb(56, 56, 255);
 	color: white;
@@ -41,11 +41,20 @@ footer {
 .wrapper {
 	display: flex;
 	width: 80%;
-	justify-content: space-around;
+	justify-content: center;
 	margin: 0 auto;
 }
 .content {
 	display: flex;
-	margin-top: 40px;
+	margin: 40px auto;
 	flex-direction: column;
-    width: 300px;
+	align-items: center;
+    width: 800px;
+}
+.block {
+	display: inline-block;
+	vertical-align: top;
+}
+.row {
+    margin: 10px 0;
+}

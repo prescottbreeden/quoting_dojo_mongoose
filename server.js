@@ -19,8 +19,16 @@ const url = 'mongodb://localhost:27017/quoting_dojo'
 mongoose.connect(url);
 
 var QuoteSchema = new mongoose.Schema({
-    name: String,
-    quote: String
+    name: 
+    {
+        type: String,
+        minlength: 3
+    },
+    quote: 
+    {
+        type: String,
+        minlength: 10
+    }
 }, {timestamps: true})
 
 mongoose.model('Quote', QuoteSchema);
@@ -30,18 +38,35 @@ app.get('/', function(req, res) {
     res.render('index');
 })
 
+app.get('/quotes', function(req, res) {
+    var all_quotes = Quote.find({}, function(err, quotes) {
+        if(err)
+        {
+            console.log(err);
+        }
+        else 
+        {
+            console.log(all_quotes[0]);
+            console.log(all_quotes[0].name);
+            console.log(all_quotes[0].quote);
+        }
+    })
+
+    res.render('quotes', {quotes: all_quotes});
+})
+
 app.post('/process', function(req, res) {
     console.log("POST DATA", req.body);
 
     var quote = new Quote({name: req.body.name, quote: req.body.quote});
-    console.log(quote);
 
     quote.save(function(err) {
         if(err) {
             console.log('something went wrong')
+            res.render('/');
         } else {
             console.log('successfully added a quote!')
-            res.redirect('/');
+            res.redirect('/quotes');
         }
     })
 })
